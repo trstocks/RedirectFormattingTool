@@ -3,7 +3,7 @@
 #the input should be a source and destination. The source shouldn't have the protocol
 #and it may or may not have the legacy subdomain indicator(i.e. archive, roc, redirect)
 #the url subdomain may also be listed as www, but should be updated to the correct legacy subdomain
-source="northjersey.com/porkchop"
+source="google.com/porkchop"
 #we need to make sure the destination is a valid, reachable url.
 #we need to make sure it has the protocol regardless of what the customer gives.
 destination="https://en.wikipedia.org/wiki/Porky_Pig"
@@ -13,19 +13,7 @@ destination="https://en.wikipedia.org/wiki/Porky_Pig"
 
 #exceptions should be common. Subdomains like offers. or static. wouldn't be managed in this tool as a source
 #['offers','static']
-class URLChecker:
-    #hasprotocol
-    protocols = ('http','https','ftp')
-    def checkProtocol(url):
-        protocols = ('http','https','ftp')
-        #search for protocol in url string
-        #return true if exists
 
-    #hasSubdomain
-    def checkSubdomain(url):
-        pass
-
-    #hasPath
 #the results can print on the screen for now, but should ultimately be added to a file
 class URLSource(object):
     pass
@@ -62,5 +50,5 @@ class Redirect(object):
         #print self.source
 
 a=Redirect()
-a.setSourceAndDestination("google.com/cheese/danish","app.com")
+a.setSourceAndDestination("google.com/cheese/danish","yahoo.com")
 a.checkSource()

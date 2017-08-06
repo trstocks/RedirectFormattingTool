@@ -1,6 +1,5 @@
 import re
 class URLChecker:
-
     #hasprotocol
     def checkProtocol(self,url):
         """Search for protocol in url string. Return true if exists"""
@@ -12,7 +11,7 @@ class URLChecker:
         else:
             return False
     #hasSubdomain
-    def checkSubdomain(url):
+    def checkSubdomain(self,url):
         pattern_string="\w+\.\w+\.com|net"
         pattern = re.compile(pattern_string)
         if pattern.match(url):
@@ -21,5 +20,5 @@ class URLChecker:
             return "There is no subdomain in {0}".format(url)
 
     #hasPath
-    def checkPath(url):
+    def checkPath(self,url):
         pass

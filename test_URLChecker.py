@@ -24,9 +24,12 @@ class ProtocolTests(unittest.TestCase):
         self.assertFalse(testurl.checkProtocol("google.com/shortbread"))
 class SubdomainTests(unittest.TestCase):
     """Check for Subdomain"""
-    def test_PASS_checkSubdomain_returnSuccessString(self):
+    def test_PASS_checkSubdomain_returnStringDetectingSubdomain(self):
         testurl = URLChecker()
-        self.assertEqual(testurl.checkSubdomain("pope.spacepirate.com/firebritches"),"pope.spacepirate.com/firebritches has a subdomain")
+        self.assertEqual(testurl.checkSubdomain('pope.spacepirate.com/firebritches'),'pope.spacepirate.com/firebritches has a subdomain')
+    def test_PASS_checkSubdomain_returnStringNotDetectingSubdomain(self):
+        testurl = URLChecker()
+        self.assertEqual(testurl.checkSubdomain('spacepirate.com/firebritches'),'There is no subdomain in spacepirate.com/firebritches')
 
 
 
