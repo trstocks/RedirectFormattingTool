@@ -31,6 +31,9 @@ class SubdomainTests(unittest.TestCase):
         testurl = URLChecker()
         self.assertEqual(testurl.checkSubdomain('spacepirate.com/firebritches'),'There is no subdomain in spacepirate.com/firebritches')
 
+    def test_PASS_checkPath_returnPath(self):
+        testurl = URLChecker()
+        self.assertEqual(testurl.checkPath('google.com/troy'),"troy")
 
 
 if __name__ == '__main__':

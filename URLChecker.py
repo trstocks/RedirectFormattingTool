@@ -4,7 +4,7 @@ class URLChecker:
     def checkProtocol(self,url):
         """Search for protocol in url string. Return true if exists"""
         #protocols = ('http','https','ftp')
-        pattern_string = "http:\/\/|https:\/\/|ftp:\/\/"
+        pattern_string = 'http:\/\/|https:\/\/|ftp:\/\/'
         pattern = re.compile(pattern_string)
         if pattern.search(url):
             return True
@@ -12,7 +12,7 @@ class URLChecker:
             return False
     #hasSubdomain
     def checkSubdomain(self,url):
-        pattern_string="\w+\.\w+\.com|net"
+        pattern_string='\w+\.\w+\.com|net'
         pattern = re.compile(pattern_string)
         if pattern.match(url):
             return "{0} has a subdomain".format(url)
@@ -21,4 +21,9 @@ class URLChecker:
 
     #hasPath
     def checkPath(self,url):
-        pass
+        #pattern_string='(com|net)\/.*'
+        if self.checkProtocol(url)== True:
+            noprotocol=url.split['://']
+            return noprotocol[1].split('/')
+        else:
+            return url.split('/')[1]
